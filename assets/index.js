@@ -8,8 +8,18 @@ $(document).ready(function() {
 	}
 
 	//part 2
-	$("form").submit(function(event) {
-		$("span").text( "This person is " + (2015 - "yearborn") + " years old.").show();
+	$('#age-form').submit(function(event) {
+		$('#error').text('');
+		$('#calculated-age').text('');
+		var birthYear = $('#birth-year').val();
+		if ((1885 < birthYear) && (birthYear < 2015)) {
+			var age = new Date().getFullYear() - birthYear;
+			$('#calculated-age').html("You are " + age + " years old.");
+		}
+		else {
+			$('#error').html("Error: Please enter a valid number between 1885 and 2015.");
+		}
 		event.preventDefault();
 	});
+	
 });

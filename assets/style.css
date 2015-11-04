@@ -8,6 +8,11 @@ form {
 	font-family: Tahoma;
 }
 
-span {
+#calculated-age {
 	font-family: Tahoma;
+}
+
+#error {
+	font-family: Tahoma;
+	color: red;
 }
